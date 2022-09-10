@@ -31,6 +31,7 @@ productos.push(jeanRegularfit)
 const jeanWidefit = new Jean (3,"jeans","Jean Widefit","Jean comodo widefit color azul",150,1,"media/widefit.webp");
 productos.push(jeanWidefit)
 
+// Seleccion de contenedores padres para manipulacion del DOM.
 
 const cardConntenedor = document.getElementById("card-contenedor")
 const facturaConntenedor = document.getElementById("factura-contenedor")
@@ -85,6 +86,9 @@ while (comprar === true) {
         }
         if (opcionCompra === 1) {
             alert("🎊 Muchas Gracias por tu compra 🎊 \n✍ Revise su factura ✍")
+
+            // Muestra en el DOM los productos seleccionados en el carrito con imagenes.
+
             carrito.forEach((producto) => {
                 const div = document.createElement("div")
                 div.classList.add("card")
@@ -96,6 +100,9 @@ while (comprar === true) {
                 `
                 cardConntenedor.appendChild(div)
             })
+
+            // Muestra en el DOM  lista productos seleccionados en el carrito cantidades.
+            
             carrito.forEach((producto) => {
                 const div = document.createElement("div")
                 div.classList.add("factura")
@@ -106,6 +113,9 @@ while (comprar === true) {
                     `
                 facturaConntenedor.appendChild(div)
             })
+
+            // Muestra en el DOM el total de los gastos de compra.
+
             const divtotal = document.createElement("div")
             divtotal.classList.add("total")
             divtotal.innerHTML = `
